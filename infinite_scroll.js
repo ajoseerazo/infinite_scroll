@@ -1,5 +1,3 @@
-var root = 'http://localhost/c21pe/public';
-
 jQuery.fn.infinite_scroll = function ( options ){
 
     var error = false;
