@@ -4,10 +4,12 @@ jQuery.fn.infinite_scroll = function ( options ){
 
     var baseUrl = options['url'];
 
+    var page = 1;
+
     function loadData( options ){
         console.log( options );
         $.ajax({
-            url: options['url'] +"?page="+ options['page'] + ( options['url_options'] ? options['url_options'] : "" ),
+            url: options['url'] +"?page="+ page + ( options['url_options'] ? options['url_options'] : "" ),
             type: 'get',
             jsonp: 'jsonp', 
             success: function(response, status, jqXHR){
@@ -21,7 +23,7 @@ jQuery.fn.infinite_scroll = function ( options ){
                     return;
                 }
 
-                options['page'] = (response.current_page + 1);
+                page = (response.current_page + 1);
 
                 var data = {
                     data: response.data
