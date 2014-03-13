@@ -11,7 +11,7 @@ jQuery.fn.infinite_scroll = function ( options ){
         $.ajax({
             url: options['url'] +"?page="+ page + ( options['url_options'] ? "&" + options['url_options'] : "" ),
             type: 'get',
-            jsonp: 'jsonp', 
+            dataType: 'jsonp', 
             success: function(response, status, jqXHR){
                 if( options['gif'] )
                     $(options['gif']).hide();
