@@ -9,7 +9,7 @@ jQuery.fn.infinite_scroll = function ( options ){
     function loadData( options ){
         console.log( options );
         $.ajax({
-            url: options['url'] +"?page="+ page + ( options['url_options'] ? options['url_options'] : "" ),
+            url: options['url'] +"?page="+ page + ( options['url_options'] ? "&" + options['url_options'] : "" ),
             type: 'get',
             jsonp: 'jsonp', 
             success: function(response, status, jqXHR){
